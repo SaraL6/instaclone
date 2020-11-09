@@ -7,7 +7,7 @@
             {{-- Main section --}}
             <main class="main col-md-8 px-2 py-3">
 
-                @forelse ($posts as $post)
+                @forelse ($posts->sortByDesc("created_at") as $post)
 
                     @php
                         $state=false;
@@ -239,11 +239,11 @@
 
                     <!-- User Info -->
                     <div class="d-flex align-items-center mb-3">
-                        <a href="/profile/{{Auth::user()->username}}" style="width: 56px; height: 56px;">
+                        <a href="/profile/{{Auth::user()->id}}" style="width: 56px; height: 56px;">
                             <img src="{{asset('storage/'.Auth::user()->image)}}" class="rounded-circle w-100">
                         </a>
                         <div class='d-flex flex-column pl-3'>
-                            <a href="/profile/{{Auth::user()->username}}" class='h6 m-0 text-dark text-decoration-none' >
+                            <a href="/profile/{{Auth::user()->id}}" class='h6 m-0 text-dark text-decoration-none' >
                                 <strong>{{ auth()->user()->username }}</strong>
                             </a>
                             <small class="text-muted ">{{ auth()->user()->name }}</small>

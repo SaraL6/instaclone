@@ -7,10 +7,10 @@
 STORIES
             {{-- @if ($user->stories->count() > 0)
                 <a href="/stories/{{$user->username}}" >
-                    <img src="{{ asset($user->profile->getProfileImage()) }}" class="border-linear  w-100">
+                    <img src="{{ asset($user->getProfileImage()) }}" class="border-linear  w-100">
                 </a>
             @else
-                <img src="{{ asset($user->profile->getProfileImage()) }}" class="rounded-circle w-100">
+                <img src="{{ asset($user->getProfileImage()) }}" class="rounded-circle w-100">
             @endif --}}
         </div>
 
@@ -42,14 +42,14 @@ STORIES
             <div class="pt-4 font-weight-bold ">
                 {{ $user->name }}
             </div>
-            {{-- <div>
-                {!! nl2br(e($user->profile->bio)) !!}
+            <div>
+                {!! nl2br(e($user->bio)) !!}
             </div>
-            <div class="font-weight-bold">
-                <a href="{{ $user->profile->website }}" target="_blanc">
-                    {{ $user->profile->website }}
+            <div class="font-weight-bold mb-2">
+                <a href="{{ $user->website }}" target="_blanc">
+                    {{ $user->website }}
                 </a>
-            </div> --}}
+            </div>
 
         </div>
     </div>
